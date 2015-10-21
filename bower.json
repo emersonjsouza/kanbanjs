@@ -1,0 +1,24 @@
+{
+  "name": "kanban.io",
+  "version": "0.0.1",
+  "authors": [
+    "emersonjose <emersonjprogramador@gmail.com>"
+  ],
+  "description": "Kanban.io",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~1.7.2",
+    "bootstrap": "*",
+    "angular":"~1.4.7",
+    "angular-material": "~1.0.0-rc1",
+    "angular-resource":"~1.4.7",
+    "angular-ui-router":"~0.2.15"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "kanban.io",
+  "author": "Emerson jose",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "body-parser": "~1.0.0",
+    "ejs": ">=2.3.3",
+    "express": "~4.9.8",
+    "express-load": "~1.1.14",
+    "morgan": "~1.5.0",
+    "async": "~0.9.0",
+    "request": "~2.64.0",
+    "q": "*",
+    "multer": "*",
+    "moment": "*",
+    "underscore": "*"
+  }
+}
