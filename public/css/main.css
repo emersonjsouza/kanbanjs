@@ -2,3 +2,5 @@ body {
   min-height: 2000px;
   padding-top: 70px;
 }
+
+.navbar-brand span {font-size: 10px;}
