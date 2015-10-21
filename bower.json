@@ -1,5 +1,5 @@
 {
-  "name": "kanban.io",
+  "name": "kanbanjs",
   "version": "0.0.1",
   "authors": [
     "emersonjose <emersonjprogramador@gmail.com>"
@@ -14,7 +14,7 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "~1.7.2",
+    "jquery": "~2.1.4",
     "bootstrap": "*",
     "angular":"~1.4.7",
     "angular-material": "~1.0.0-rc1",

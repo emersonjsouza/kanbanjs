@@ -3,8 +3,7 @@ var express     = require('express')
   , bodyParser  = require('body-parser')
   , load        = require('express-load')
   , server      = require('http').Server(app)
-  , multer      = require('multer');
-
+  , config      = require('./kanbanjs-config.json');
 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
@@ -14,19 +13,20 @@ app.use(bodyParser.urlencoded());
 app.use(function(req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type, Authorization');
     next();
 });
 
 load('models', { cwd: 'app' })
-  .then('controllers')
-  .then('routes')
-  .into(app);
+    .then('controllers')
+    .then('routes')
+    .into(app);
 
-var port = Number(process.env.PORT || 3000);
+app.get('*', function(req, res) {
+    res.render('index', {config: config});
+});
 
-server.listen(port, function(){
-  console.log('running ehcarro painel on port ' + port);
+server.listen(process.env.PORT || 3000, function(){
+    console.log('running kanbanjs!');
 });
 
 module.exports = app;
