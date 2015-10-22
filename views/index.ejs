@@ -16,6 +16,8 @@
 
     <!-- Custom styles for this template -->
     <link href="css/<%= config.theme %>.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+    <link href="bower_components/angular-material/angular-material.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -36,31 +38,37 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><%= config.title %> <span><%= config.version %></span></a>
+         <!-- <a class="navbar-brand" href="#"><%= config.title %> <span><%= config.version %></span></a> -->
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projetos <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-              </ul>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    Projetos <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li ng-repeat="item in project.items"><a ui-sref="tasks({projectId: item._id})">{{item.name}}</a></li>
+                </ul>
             </li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
+      <md-progress-linear ng-show="project.isLoading" md-mode="indeterminate"></md-progress-linear>
     </nav>
 
-    <div class="container" ng-view>
+    <div class="container">
+
     </div>
 
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-resource/angular-resource.min.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-
     <script src="app/app.js"></script>
     <script src="app/shared/resources.js"></script>
     <script src="app/components/project-service.js"></script>

@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('kanbanjs',['ui.router', 'ngResource']);
+var app = angular.module('kanbanjs',['ui.router', 'ngResource', 'ngMaterial']);
 
 
 
