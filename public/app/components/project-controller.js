@@ -1,4 +1,4 @@
-app.controller('projectCrtl', function($scope, ProjectService) {
-	console.log('teste!');
+
+app.controller('ProjectCrtl',['$scope', 'ProjectService', function($scope, ProjectService) {
 	$scope.project = ProjectService;
-});
+}]);
