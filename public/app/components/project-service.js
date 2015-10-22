@@ -9,7 +9,7 @@ app.factory('Project',['appHost', '$resource', function(appHost, $resource) {
 }]);
 
 app.factory('Task',['appHost', '$resource', function(appHost, $resource) {
-    return $resource(appHost.url + 'task',{id:'@_id'},{
+    return $resource(appHost.url + 'tasks',{id:'@_id'},{
         update: {
             method: 'PUT'
         }
@@ -20,19 +20,20 @@ app.service('ProjectService',['$q', 'Project', 'Task', function($q, Project, Tas
     var self = {
         'items': [],
         'tasks':[],
+        'taskSelected': null,
         'isLoading': false,
         'loadProject': function() {
             self.isLoading = true;
 
             Project.query().$promise.then(function (response) {
                 self.items = response;
-                self.isLoading = true;
+                self.isLoading = false;
             });
         },
         'loadTasks': function(projectId) {
             self.isLoading = true;
 
-            Task.query({id: projectId}).$promise.then(function (response) {
+            Task.query().$promise.then(function (response) {
                self.tasks = response;
                self.isLoading = false;
             });

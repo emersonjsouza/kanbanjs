@@ -1,0 +1,20 @@
+ <div class="col-md-8">
+    <div class="row">
+        <div ng-repeat="task in project.tasks" class="col-md-6">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{ task.type }}</h3>
+                </div>
+                <div class="panel-body">
+                  <ul dnd-list="task.tasks">
+                      <li ng-repeat="item in task.tasks" dnd-draggable="item"
+                          dnd-moved="task.tasks.splice($index, 1)" dnd-effect-allowed="move"
+                          dnd-selected="project.taskSelected = item" ng-class="{'selected': project.taskSelected === item}">
+                            {{item.label}}
+                      </li>
+                  </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

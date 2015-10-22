@@ -19,6 +19,7 @@
     "angular":"~1.4.7",
     "angular-material": "~1.0.0-rc1",
     "angular-resource":"~1.4.7",
-    "angular-ui-router":"~0.2.15"
+    "angular-ui-router":"~0.2.15",
+    "angular-drag-and-drop-lists":"~1"
   }
 }
