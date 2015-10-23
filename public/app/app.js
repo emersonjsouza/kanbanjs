@@ -10,7 +10,6 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
         .state('tasks', {name: 'tasks', url: '/tasks', templateUrl: 'templates/tasks.html', controller: 'TaskCrtl'})
 
     $urlRouterProvider.otherwise('/home');
-
 });
 
 
